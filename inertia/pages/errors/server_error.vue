@@ -1,8 +1,4 @@
-<script setup lang="ts">
-import MarketingLayout from '~/layouts/marketing.vue'
-
-defineOptions({ layout: MarketingLayout })
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="home">

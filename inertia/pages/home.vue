@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import { ArrowUpRight } from 'lucide-vue-next'
-import MarketingLayout from '~/layouts/marketing.vue'
-
-defineOptions({ layout: MarketingLayout })
 </script>
 
 <template>
