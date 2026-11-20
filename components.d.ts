@@ -12,6 +12,13 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('./inertia/components/ui/button/Button.vue')['default']
+    Card: typeof import('./inertia/components/ui/card/Card.vue')['default']
+    CardAction: typeof import('./inertia/components/ui/card/CardAction.vue')['default']
+    CardContent: typeof import('./inertia/components/ui/card/CardContent.vue')['default']
+    CardDescription: typeof import('./inertia/components/ui/card/CardDescription.vue')['default']
+    CardFooter: typeof import('./inertia/components/ui/card/CardFooter.vue')['default']
+    CardHeader: typeof import('./inertia/components/ui/card/CardHeader.vue')['default']
+    CardTitle: typeof import('./inertia/components/ui/card/CardTitle.vue')['default']
     Field: typeof import('./inertia/components/ui/field/Field.vue')['default']
     FieldContent: typeof import('./inertia/components/ui/field/FieldContent.vue')['default']
     FieldDescription: typeof import('./inertia/components/ui/field/FieldDescription.vue')['default']
