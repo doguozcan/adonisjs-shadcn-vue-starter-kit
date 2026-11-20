@@ -8,7 +8,7 @@ defineOptions({
 </script>
 
 <template>
-  <Card class="w-full max-w-lg">
+  <Card class="w-full max-w-lg mx-auto h-fit">
     <CardHeader>
       <CardTitle>Get Started!</CardTitle>
       <CardDescription>Create your account by entering your details.</CardDescription>
