@@ -1,24 +1,37 @@
 <script setup lang="ts">
 import { Link } from '@adonisjs/inertia/vue'
 import { usePage } from '@inertiajs/vue3'
-import { LogOut, Home, UserKey, UserPlus } from '@lucide/vue'
+import { LogOut, Home, UserKey, UserPlus, LayoutDashboard } from '@lucide/vue'
+import { computed } from 'vue'
 
 const page = usePage()
+const user = computed(() => page.props.user)
 </script>
 
 <template>
   <nav class="sticky top-0 z-50 flex p-4 border-b bg-background">
-    <Link route="home">
-      <Button variant="outline">
-        <Home />
-        VISA
-      </Button>
-    </Link>
+    <div class="flex gap-2">
+      <Link route="home">
+        <Button variant="outline">
+          <Home />
+          VISA
+        </Button>
+      </Link>
+
+      <Separator v-if="user" orientation="vertical" />
+
+      <Link v-if="user" route="dashboard">
+        <Button variant="outline">
+          <LayoutDashboard />
+          Dashboard
+        </Button>
+      </Link>
+    </div>
 
     <div class="flex flex-1 justify-end space-x-2">
       <Theme />
 
-      <div v-if="page.props.user">
+      <div v-if="user">
         <Link route="session.destroy">
           <Button>
             <LogOut />
