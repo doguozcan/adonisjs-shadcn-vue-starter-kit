@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { Form, Link } from '@adonisjs/inertia/vue'
+import AppLayout from '~/layouts/app.vue'
+
+defineOptions({
+  layout: AppLayout,
+})
 </script>
 
 <template>
