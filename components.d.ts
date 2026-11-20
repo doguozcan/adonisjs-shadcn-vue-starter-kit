@@ -22,6 +22,7 @@ declare module 'vue' {
     FieldSet: typeof import('./inertia/components/ui/field/FieldSet.vue')['default']
     FieldTitle: typeof import('./inertia/components/ui/field/FieldTitle.vue')['default']
     Flash_toasts: typeof import('./inertia/components/flash_toasts.vue')['default']
+    Input: typeof import('./inertia/components/ui/input/Input.vue')['default']
     Label: typeof import('./inertia/components/ui/label/Label.vue')['default']
     Logo: typeof import('./inertia/components/logo.vue')['default']
     Nav_link: typeof import('./inertia/components/nav_link.vue')['default']
