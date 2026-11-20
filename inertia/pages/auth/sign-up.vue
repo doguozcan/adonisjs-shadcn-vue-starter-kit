@@ -9,7 +9,7 @@ defineOptions({ layout: AuthLayout })
   <h1 class="auth__title">Create your account</h1>
   <p class="auth__sub">Start building with the starter kit.</p>
 
-  <Form v-slot="{ processing, errors }" route="new_account.store">
+  <Form v-slot="{ processing, errors }" route="registration.store">
     <div class="auth__form">
       <div class="field">
         <label class="field__label" for="fullName">Full name</label>

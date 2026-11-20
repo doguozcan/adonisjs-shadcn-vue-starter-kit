@@ -52,6 +52,6 @@ defineOptions({ layout: AuthLayout })
 
   <p class="auth__foot">
     New here?
-    <Link route="new_account.create" class="il">Create an account</Link>
+    <Link route="registration.create" class="il">Create an account</Link>
   </p>
 </template>
