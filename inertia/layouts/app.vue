@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { Link } from '@adonisjs/inertia/vue'
-import { Home, UserKey, UserPlus } from '@lucide/vue'
+import { usePage } from '@inertiajs/vue3'
+import { ArrowLeft, Home, UserKey, UserPlus } from '@lucide/vue'
+
+const page = usePage()
 </script>
 
 <template>
@@ -15,19 +18,30 @@ import { Home, UserKey, UserPlus } from '@lucide/vue'
     <div class="flex flex-1 justify-end space-x-2">
       <Theme />
 
-      <Link route="session.create">
-        <Button variant="outline">
-          <UserKey />
-          Sign In
-        </Button>
-      </Link>
+      <div v-if="page.props.user">
+        <Link route="session.destroy">
+          <Button>
+            <ArrowLeft />
+            Sign Out
+          </Button>
+        </Link>
+      </div>
 
-      <Link route="registration.create">
-        <Button>
-          <UserPlus />
-          Sign Up
-        </Button>
-      </Link>
+      <div v-else class="space-x-2">
+        <Link route="session.create">
+          <Button variant="outline">
+            <UserKey />
+            Sign In
+          </Button>
+        </Link>
+
+        <Link route="registration.create">
+          <Button>
+            <UserPlus />
+            Sign Up
+          </Button>
+        </Link>
+      </div>
     </div>
   </nav>
 
