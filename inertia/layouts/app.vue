@@ -34,4 +34,6 @@ import { Home, UserKey, UserPlus } from '@lucide/vue'
   <div class="flex p-4 min-h-[calc(100vh-(--spacing(16)))] bg-background">
     <slot />
   </div>
+
+  <Toaster />
 </template>

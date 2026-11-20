@@ -37,7 +37,9 @@ declare module 'vue' {
     Page: typeof import('./inertia/components/page.vue')['default']
     Section: typeof import('./inertia/components/section.vue')['default']
     Separator: typeof import('./inertia/components/ui/separator/Separator.vue')['default']
+    Sonner: typeof import('./inertia/components/ui/sonner/Sonner.vue')['default']
     Theme: typeof import('./inertia/components/Theme.vue')['default']
     Theme_toggle: typeof import('./inertia/components/theme_toggle.vue')['default']
+    Toaster: typeof import('./inertia/components/Toaster.vue')['default']
   }
 }

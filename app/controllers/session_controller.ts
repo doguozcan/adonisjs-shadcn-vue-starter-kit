@@ -7,18 +7,22 @@ export default class SessionController {
     return inertia.render('auth/sign-in', {})
   }
 
-  async store({ request, auth, response }: HttpContext) {
+  async store({ request, auth, response, session }: HttpContext) {
     const { email, password } = await request.validateUsing(signInValidator)
 
     const user = await User.verifyCredentials(email, password)
+
+    session.flash('success', "You've signed in successfully!")
 
     await auth.use('web').login(user)
 
     return response.redirect().toRoute('dashboard')
   }
 
-  async destroy({ auth, response }: HttpContext) {
+  async destroy({ auth, response, session }: HttpContext) {
     await auth.use('web').logout()
+
+    session.flash('success', "You've signed out successfully!")
 
     return response.redirect().toRoute('session.create')
   }

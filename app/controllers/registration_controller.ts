@@ -7,10 +7,12 @@ export default class RegistrationController {
     return inertia.render('auth/sign-up', {})
   }
 
-  async store({ request, response, auth }: HttpContext) {
+  async store({ request, response, auth, session }: HttpContext) {
     const { fullName, email, password } = await request.validateUsing(signUpValidator)
 
     const user = await User.create({ fullName, email, password })
+
+    session.flash('success', "You've signed up successfully!")
 
     await auth.use('web').login(user)
 
