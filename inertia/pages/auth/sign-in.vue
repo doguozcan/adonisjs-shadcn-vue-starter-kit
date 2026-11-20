@@ -1,57 +1,38 @@
 <script setup lang="ts">
-import AuthLayout from '~/layouts/auth.vue'
 import { Form, Link } from '@adonisjs/inertia/vue'
-
-defineOptions({ layout: AuthLayout })
 </script>
 
 <template>
-  <h1 class="auth__title">Welcome back</h1>
-  <p class="auth__sub">Sign in to continue building.</p>
-
-  <Form v-slot="{ processing, errors }" route="session.store">
-    <div class="auth__form">
-      <div class="field">
-        <label class="field__label" for="email">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          class="field__input"
-          autocomplete="username"
-          placeholder="you@example.com"
-          :aria-invalid="errors.email ? 'true' : 'false'"
-        />
-        <span v-if="errors.email" class="field__error">{{ errors.email }}</span>
-      </div>
-
-      <div class="field">
-        <label class="field__label" for="password">Password</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          class="field__input"
-          autocomplete="current-password"
-          placeholder="••••••••"
-          :aria-invalid="errors.password ? 'true' : 'false'"
-        />
-        <span v-if="errors.password" class="field__error">{{ errors.password }}</span>
-      </div>
-
-      <button
-        type="submit"
-        class="btn btn--primary btn--block"
-        :disabled="processing"
-        :style="{ marginTop: '4px' }"
-      >
-        {{ processing ? 'One moment…' : 'Sign in' }}
-      </button>
-    </div>
-  </Form>
-
-  <p class="auth__foot">
-    New here?
-    <Link route="registration.create" class="il">Create an account</Link>
-  </p>
+  <Card class="w-full max-w-lg">
+    <CardHeader>
+      <CardTitle>Welcome Back!</CardTitle>
+      <CardDescription>Enter your credentials to access your account.</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <Form v-slot="{ processing, errors }" route="session.store">
+        <FieldGroup>
+          <Field>
+            <FieldLabel for="email">Email</FieldLabel>
+            <Input id="email" name="email" type="text" required />
+            <FieldDescription v-if="errors.email" class="text-destructive">
+              {{ errors.email }}
+            </FieldDescription>
+          </Field>
+          <Field>
+            <FieldLabel for="password">Password</FieldLabel>
+            <Input id="password" name="password" type="password" />
+            <FieldDescription v-if="errors.password" class="text-destructive">
+              {{ errors.password }}
+            </FieldDescription>
+          </Field>
+          <Field>
+            <Button :disabled="processing">Sign In</Button>
+            <FieldDescription class="text-center">
+              Don't have an account? <Link route="registration.create">Sign up!</Link>
+            </FieldDescription>
+          </Field>
+        </FieldGroup>
+      </Form>
+    </CardContent>
+  </Card>
 </template>
