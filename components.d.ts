@@ -37,6 +37,7 @@ declare module 'vue' {
     Page: typeof import('./inertia/components/page.vue')['default']
     Section: typeof import('./inertia/components/section.vue')['default']
     Separator: typeof import('./inertia/components/ui/separator/Separator.vue')['default']
+    Theme: typeof import('./inertia/components/Theme.vue')['default']
     Theme_toggle: typeof import('./inertia/components/theme_toggle.vue')['default']
   }
 }

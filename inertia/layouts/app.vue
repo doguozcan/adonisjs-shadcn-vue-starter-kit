@@ -13,6 +13,8 @@ import { Home, UserKey, UserPlus } from '@lucide/vue'
     </Link>
 
     <div class="flex flex-1 justify-end space-x-2">
+      <Theme />
+
       <Link route="session.create">
         <Button variant="outline">
           <UserKey />
