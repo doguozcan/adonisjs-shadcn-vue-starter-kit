@@ -11,6 +11,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Button: typeof import('./inertia/components/ui/button/Button.vue')['default']
     Field: typeof import('./inertia/components/ui/field/Field.vue')['default']
     FieldContent: typeof import('./inertia/components/ui/field/FieldContent.vue')['default']
     FieldDescription: typeof import('./inertia/components/ui/field/FieldDescription.vue')['default']
