@@ -1,20 +1,21 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Link } from '@adonisjs/inertia/vue'
+import { ArrowLeft, FileQuestionMark } from '@lucide/vue'
+</script>
 
 <template>
-  <div class="home">
-    <article class="prose-card">
-      <div class="pc-top">
-        <span class="pc-status mono tag" :style="{ color: 'var(--subtle)' }">
-          <span class="dot" /> 404
-        </span>
-      </div>
-      <div class="pc-lead">
-        <span>Not found.</span>
-        <em>That route hasn't been built yet.</em>
-      </div>
-      <p class="pc-para">
-        The page you tried to reach doesn't exist. Check the URL or head back home.
-      </p>
-    </article>
+  <div class="flex flex-col min-h-screen justify-center items-center gap-2">
+    <FileQuestionMark />
+
+    <p class="font-bold tracking-tight">404</p>
+
+    <p class="font-semibold text-muted-foreground">Not found.</p>
+
+    <Link route="home">
+      <Button variant="outline">
+        <ArrowLeft />
+        Go back to home
+      </Button>
+    </Link>
   </div>
 </template>

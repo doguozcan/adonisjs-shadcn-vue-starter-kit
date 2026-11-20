@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Link } from '@adonisjs/inertia/vue'
 import { usePage } from '@inertiajs/vue3'
-import { ArrowLeft, Home, UserKey, UserPlus } from '@lucide/vue'
+import { LogOut, Home, UserKey, UserPlus } from '@lucide/vue'
 
 const page = usePage()
 </script>
@@ -21,7 +21,7 @@ const page = usePage()
       <div v-if="page.props.user">
         <Link route="session.destroy">
           <Button>
-            <ArrowLeft />
+            <LogOut />
             Sign Out
           </Button>
         </Link>
