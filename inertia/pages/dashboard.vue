@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Head } from '@inertiajs/vue3'
 import AppLayout from '~/layouts/app.vue'
 
 defineOptions({
@@ -7,5 +8,7 @@ defineOptions({
 </script>
 
 <template>
+  <Head title="Dashboard" />
+
   <p>Dashboard</p>
 </template>
