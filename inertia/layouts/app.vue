@@ -12,7 +12,7 @@ const user = computed(() => page.props.user)
   <nav class="sticky top-0 z-50 flex p-4 border-b bg-background">
     <div class="flex gap-2">
       <Link route="home">
-        <Button variant="outline">
+        <Button :variant="page.url === '/' ? 'default' : 'outline'">
           <Home />
           VISA
         </Button>
@@ -21,7 +21,7 @@ const user = computed(() => page.props.user)
       <Separator v-if="user" orientation="vertical" />
 
       <Link v-if="user" route="dashboard">
-        <Button variant="outline">
+        <Button :variant="page.url.startsWith('/dashboard') ? 'default' : 'outline'">
           <LayoutDashboard />
           Dashboard
         </Button>
