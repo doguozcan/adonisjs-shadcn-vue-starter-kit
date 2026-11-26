@@ -12,9 +12,9 @@ export default class SessionController {
 
     const user = await User.verifyCredentials(email, password)
 
-    session.flash('success', "You've signed in successfully!")
+    await auth.use('web').login(user, !!request.input('rememberMe'))
 
-    await auth.use('web').login(user)
+    session.flash('success', "You've signed in successfully!")
 
     return response.redirect().toRoute('dashboard')
   }

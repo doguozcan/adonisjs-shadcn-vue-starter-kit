@@ -12,9 +12,9 @@ export default class RegistrationController {
 
     const user = await User.create({ fullName, email, password })
 
-    session.flash('success', "You've signed up successfully!")
-
     await auth.use('web').login(user)
+
+    session.flash('success', "You've signed up successfully!")
 
     response.redirect().toRoute('dashboard')
   }

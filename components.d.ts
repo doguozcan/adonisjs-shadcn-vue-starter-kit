@@ -19,6 +19,7 @@ declare module 'vue' {
     CardFooter: typeof import('./inertia/components/ui/card/CardFooter.vue')['default']
     CardHeader: typeof import('./inertia/components/ui/card/CardHeader.vue')['default']
     CardTitle: typeof import('./inertia/components/ui/card/CardTitle.vue')['default']
+    Checkbox: typeof import('./inertia/components/ui/checkbox/Checkbox.vue')['default']
     Field: typeof import('./inertia/components/ui/field/Field.vue')['default']
     FieldContent: typeof import('./inertia/components/ui/field/FieldContent.vue')['default']
     FieldDescription: typeof import('./inertia/components/ui/field/FieldDescription.vue')['default']

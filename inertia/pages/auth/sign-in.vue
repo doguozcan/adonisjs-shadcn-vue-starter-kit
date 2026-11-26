@@ -30,6 +30,10 @@ defineOptions({
               {{ errors.password }}
             </FieldDescription>
           </Field>
+          <Field orientation="horizontal">
+            <Checkbox id="rememberMe" name="rememberMe" />
+            <FieldLabel for="rememberMe">Remember me</FieldLabel>
+          </Field>
           <Field>
             <Button :disabled="processing">Sign In</Button>
             <FieldDescription class="text-center">

@@ -23,4 +23,5 @@ export const signUpValidator = vine.create({
 export const signInValidator = vine.create({
   email: email(),
   password: vine.string(),
+  rememberMe: vine.boolean().optional(),
 })
